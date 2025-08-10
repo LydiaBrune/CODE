@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main()
+{
+    int a[10],n,i,miss,sum=0,ex_sum;
+    scanf("%d",&n);
+    for(i=0;i<n-1;i++)
+    {
+        printf("a[%d]",i);
+        scanf("%d",&a[i]);
+        sum+=a[i];
+    }
+    /*printf("sum:%d",sum);*/
+    ex_sum=n*(n+1)/2;
+    /*printf("ex_sum:%d",ex_sum);*/
+    miss=ex_sum-sum;
+    printf("%d",miss);
+}
