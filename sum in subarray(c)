@@ -1,0 +1,30 @@
+#include <stdio.h>
+void main()
+{
+    int a[10],n,i,start=0,end=0,c_sum=0,found=0,tar;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&tar);
+    for(end=0;end<n;end++)
+    {
+        c_sum+=a[end];
+        while(c_sum>tar && start<end)
+        {
+            c_sum-=a[start];
+            start++;
+        }
+        if(c_sum==tar)
+        {
+            printf("%d %d",start+1,end+1);
+            found=1;
+        }
+        
+    }
+    if(!found)
+        {
+            printf("[-1]\n");
+        }
+}
