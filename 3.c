@@ -1,0 +1,41 @@
+#include <stdio.h>
+void main()
+{
+    int a[10],n,i,j,first,second,temp,found=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1-i;j++)
+        {
+            if(a[j]<a[j+1])
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    first=a[0];
+    second=-1;
+    for(i=1;i<n;i++)
+    {
+        if(a[i]!=first)
+        {
+            second=a[i];
+            found=1;
+            break;
+        }
+    }
+    if(found==1)
+    {
+        printf("%d",second);
+    }
+    else
+    {
+        printf("[-1]\n");
+    }
+}
